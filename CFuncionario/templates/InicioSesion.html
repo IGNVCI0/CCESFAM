@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in & Sign up Form</title>
+    <link type="text/css" rel="stylesheet" href='{% static "css/style.css" %}'>
+  </head>
+  <body>
+    <main>
+      <div class="box">
+        <div class="inner-box">
+          <div class="forms-wrap">
+            <form method="POST" action="/validarUsuario" autocomplete="off" class="sign-in-form" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="logo">
+                <img src="./static/img/logo.png" alt="easyclass" />
+                <h4> Cesfam</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Bienvenido!!</h2>
+                <h6>No estas registrado?</h6>
+                <a href="#" class="toggle">Registrate aqui</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    name="Email"
+                    id="Email"
+                    type="text"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    name="Contraseña"
+                    id="Contraseña"
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Contraseña</label>
+                </div>
+
+                <input type="submit" value="Iniciar Sesion" class="sign-btn" />
+
+                <p class="text">
+                    ¿Has olvidado tu contraseña o tus datos de acceso?
+                  <a href="#"> Obtenga ayuda para iniciar sesión</a>
+                </p>
+              </div>
+            </form>
+
+            <form method="POST" action="/guardarUsuario" autocomplete="off" class="sign-up-form" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="logo">
+                <img src="./static/img/logo.png" alt="Cesfam" />
+                <h4>Cesfam</h4>
+              </div>
+
+              <div class="heading">
+                <h2>Registro</h2>
+                <h6>¿Ya tiene una cuenta?</h6>
+                <a href="#" class="toggle">Iniciar Sesion</a>
+              </div>
+
+              <div class="actual-form">
+                <div class="input-wrap">
+                  <input
+                    name="Nombre"
+                    id="Nombre"
+                    type="text"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Nombre</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    name="Email"
+                    id="Email"
+                    type="email"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Email</label>
+                </div>
+
+                <div class="input-wrap">
+                  <input
+                    name="Contraseña"
+                    id="Contraseña"
+                    type="password"
+                    minlength="4"
+                    class="input-field"
+                    autocomplete="off"
+                    required
+                  />
+                  <label>Contraseña</label>
+                </div>
+
+                <input type="submit" value="Registrarme" class="sign-btn" />
+
+                <p class="text">
+                  Al registrarme, acepto las
+                  <a href="#">Condiciones de servicio</a> y la 
+                  <a href="#">Política de privacidad</a>
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <div class="carousel">
+            <div class="images-wrapper">
+              <img src="./static/img/image1.png" class="image img-1 show" alt="" />
+              <img src="./static/img/image2.png" class="image img-2" alt="" />
+              <img src="./static/img/image3.png" class="image img-3" alt="" />
+            </div>
+
+            <div class="text-slider">
+              <div class="text-wrap">
+                <div class="text-group">
+                  <h2>Create your own courses</h2>
+                  <h2>Customize as you like</h2>
+                  <h2>Invite students to your class</h2>
+                </div>
+              </div>
+
+              <div class="bullets">
+                <span class="active" data-value="1"></span>
+                <span data-value="2"></span>
+                <span data-value="3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script type= 'text/javascript' src='{% static "js/app.js" %}'></script>
+  </body>
+</html>
